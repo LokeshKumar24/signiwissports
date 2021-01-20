@@ -1,0 +1,21 @@
+<mvc:View controllerName="SS.SigniwisSports.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+xmlns:form="sap.ui.layout.form">
+	<!--<Shell id="shell" >-->
+		<App id="app">
+			<pages>
+				<Page id="page" showHeader="false" class="myBackgroundImage" >
+					<content >
+					   <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+					    <items>
+					     <Input id="userId" placeholder="User ID"></Input>
+					     <Input id="userName" placeholder="Password" type="Password"></Input>
+					     <Button width="12rem" text="Login" type="Emphasized" press="onLogin"></Button>
+					    </items>
+					   </VBox>
+				
+					</content>
+				</Page>
+			</pages>
+		</App>
+	<!--</Shell>-->
+</mvc:View>

@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<SelectDialog >
+	
+		<List items="{/allProducts}">
+	
+				
+			<ObjectListItem intro="{productName}" number="{amount}" icon="{image}" title="{brand}">
+				
+			</ObjectListItem>
+
+		</List>
+
+	
+</SelectDialog>
+</core:FragmentDefinition>

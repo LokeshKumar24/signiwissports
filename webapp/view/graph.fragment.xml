@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"   xmlns:grid="sap.ui.layout.cssgrid"
+xmlns:mc="sap.suite.ui.microchart" xmlns:layout="sap.ui.layout">
+	<layout:VerticalLayout>
+										<layout:Grid containerQuery="true" defaultSpan="XL6 L6" hSpacing="10">
+										
+											<FlexBox width="25rem" height="10rem" renderType="Div" class="sapUiSmallMargin">
+												<items>
+													<mc:InteractiveLineChart selectionChanged="selectionChanged" press="press" succeedingPoint="15">
+														<mc:points>
+															<mc:InteractiveLineChartPoint value="11" label="May" color="Neutral"/>
+															<mc:InteractiveLineChartPoint value="25.2" label="June" color="Good"/>
+															<mc:InteractiveLineChartPoint value="39.8" label="July" color="Good"/>
+															<mc:InteractiveLineChartPoint value="45.8" label="Aug" color="Good"/>
+															<mc:InteractiveLineChartPoint value="17.9" label="Sep" color="Neutral"/>
+															<mc:InteractiveLineChartPoint value="18.2" label="Oct" color="Good"/>
+														</mc:points>
+													</mc:InteractiveLineChart>
+												</items>
+											</FlexBox>
+											<FlexBox width="40rem" height="10rem" alignItems="End" justifyContent="End">
+												<items>
+													<mc:InteractiveDonutChart selectionChanged="onSelectionChanged">
+														<mc:segments>
+															<mc:InteractiveDonutChartSegment label="Implementation Phase" value="40.0" displayedValue="40.0%"/>
+															<mc:InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%"/>
+															<mc:InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%"/>
+														</mc:segments>
+													</mc:InteractiveDonutChart>
+												</items>
+											</FlexBox>
+										</layout:Grid>
+									</layout:VerticalLayout>
+
+</core:FragmentDefinition>

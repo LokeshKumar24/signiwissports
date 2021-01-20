@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" 	xmlns:tab="sap.ui.table">
+	<tab:Table id="idBilling" rows="{billing>/bill}" visible="false" selectionBehavior="RowOnly" enableSelectAll="false">
+										<tab:columns>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>ProductId}"></Label>
+												</tab:label>
+												<tab:template>
+													<Input value="{billing>id}" editable="false"></Input>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>ProductName}"></Label>
+												</tab:label>
+												<tab:template>
+													<Input value="{billing>name}" editable="false"></Input>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>quantity}"></Label>
+												</tab:label>
+												<tab:template>
+													<Input value="{billing>quantity}" valueLiveUpdate="true" liveChange="setData"></Input>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>Amount}"></Label>
+												</tab:label>
+												<tab:template>
+													<Input value="{billing>price}" editable="false"></Input>
+												</tab:template>
+											</tab:Column>
+										</tab:columns>
+									</tab:Table>
+
+</core:FragmentDefinition>

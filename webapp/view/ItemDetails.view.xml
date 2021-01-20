@@ -1,0 +1,71 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:obj="sap.uxap"
+	controllerName="SS.SigniwisSports.controller.ItemDetails" xmlns:tnt="sap.tnt">
+	<App>
+		<pages>
+			<Page title="{i18n>itemDetails}" navButtonPress="onBack" showNavButton="true" showHeader="false" enableScrolling="false">
+				<content>
+					<tnt:ToolHeader >
+						<Bar>
+							<contentLeft width="3rem">
+								<Button press="onBack" type="Back"></Button>
+								<Image src="{/logo/0/image}" alt="LOGO" height="3rem"/>
+							</contentLeft>
+							<contentMiddle>
+								<Title text="Signiwis Sports" titleStyle="H2"/>
+							</contentMiddle>
+							<contentRight>
+								<Button text="Logout" press="onLogout"></Button>
+							</contentRight>
+						</Bar>
+					</tnt:ToolHeader>
+					<obj:ObjectPageLayout id="object" >
+			<!--				<obj:headerTitle>-->
+			<!--<obj:ObjectPageDynamicHeaderTitle>-->
+			<!--</obj:ObjectPageDynamicHeaderTitle>-->
+			<!--			</obj:headerTitle>-->
+						<obj:headerContent>
+							<FlexBox alignItems="Start" justifyContent="Start">
+								<Avatar src="{image}" displaySize="XL"></Avatar>
+								<Text text="{productId}"></Text>
+							</FlexBox>
+							<FlexBox alignItems="Start" justifyContent="Center">
+								<Label text="ProductName"></Label>
+								<Label text="Brand"></Label>
+								<Label text="Price"></Label>
+								<Label text="QuantityAvailable"></Label>
+							</FlexBox>
+							<FlexBox alignItems="Start" justifyContent="End">
+								<Label text="{productName}"></Label>
+								<Label text="{brand}"></Label>
+								<Label text="INR {amount}"></Label>
+								<Label text="{quantity}"></Label>
+							</FlexBox>
+						</obj:headerContent>
+						<obj:sections>
+							<obj:ObjectPageSection title="Summary">
+								<obj:subSections>
+									<obj:ObjectPageSubSection>
+										<obj:blocks>
+											<!--<Title text="summary"></Title>-->
+											<Text text="{about}"></Text>
+										</obj:blocks>
+									</obj:ObjectPageSubSection>
+								</obj:subSections>
+							</obj:ObjectPageSection>
+							<obj:ObjectPageSection title="Specifications">
+								<obj:subSections>
+									<obj:ObjectPageSubSection>
+										<obj:blocks>
+											<!--<Title text="summary"></Title>-->
+											<Text text="{specifications}"></Text>
+										</obj:blocks>
+									</obj:ObjectPageSubSection>
+								</obj:subSections>
+							</obj:ObjectPageSection>
+						</obj:sections>
+					</obj:ObjectPageLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,141 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:tab="sap.ui.table" xmlns:tnt="sap.tnt" xmlns:layout="sap.ui.layout" xmlns:op="sap.uxap" xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.f" xmlns:mc="sap.suite.ui.microchart" controllerName="SS.SigniwisSports.controller.SalesLogin">
+	<App>
+		<pages>
+			<Page title="{i18n>salesLogin}" showHeader="false">
+				<content>
+					<tnt:ToolHeader >
+						<Bar>
+							<contentLeft width="3rem">
+								<Image src="{/logo/0/image}" alt="LOGO" height="3rem"/>
+							</contentLeft>
+							<contentMiddle>
+								<Title text="{i18n>SigniwisSports}" titleStyle="H2"/>
+							</contentMiddle>
+							<contentRight>
+								<Button text="{i18n>Logout}" press="onLogout"></Button>
+							</contentRight>
+						</Bar>
+					</tnt:ToolHeader>
+					<Carousel class="sapUiContentPadding" pages="{/images}" height="40%" id="carousel" visible="true">
+						<pages>
+							<Image src="{image}" alt="Example picture of speakers" width="70%"/>
+						</pages>
+					</Carousel>
+					<IconTabBar select="onAddTicket">
+						<items>
+							<IconTabFilter icon="sap-icon://bbyd-dashboard" text="OverView">
+								<content>
+									<!-- <core:Fragment fragmentName="SS.SigniwisSports.view.graph" type="XML"></core:Fragment> -->
+								</content>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://product" text="Product">
+								<content>
+									<SplitApp id="idSplitApp">
+										<masterPages>
+											<List items="{/productTypes}" itemPress="onSelect" mode="SingleSelectMaster">
+												<items>
+													<StandardListItem title="{productName}" type="Active"></StandardListItem>
+												</items>
+											</List>
+										</masterPages>
+										<detailPages>
+											<List id="objectList" itemPress="onItemSelect" mode="SingleSelectMaster"></List>
+										</detailPages>
+									</SplitApp>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://receipt" text="Billing">
+								<content>
+									<layout:VerticalLayout width="100%" class="gridWrapper">
+										<layout:Grid containerQuery="true" defaultSpan="XL3 L3" hSpacing="2">
+											<Label text="{i18n>Date}"></Label>
+											<DatePicker displayFormat="short" editable="false" id="date"></DatePicker>
+											<Label text="{i18n>OrderId}"></Label>
+											<Input id="orderId" editable="false"></Input>
+											<Label text="{i18n>CustomerName}"></Label>
+											<Input id="customerName"></Input>
+											<Label text="{i18n>CustomerNumber}"></Label>
+											<Input id="customerNumber" maxLength="10"></Input>
+											<!--<Label text="Email"></Label>-->
+											<!--<Input type="Email"></Input>-->
+											<Label text="{i18n>ProductName}" id="ProductLabel"></Label>
+											<MultiInput id="Product" showValueHelp="true" valueHelpRequest="onRequest"></MultiInput>
+											<Label text="{i18n>Accessories}"></Label>
+											<MultiComboBox id="accessories" selectionChange="handleSelectionChange" items="{ path: '/accessories', sorter: { path: 'name' } }">
+												<core:Item key="{amount}" text="{name}"/>
+											</MultiComboBox>
+										</layout:Grid>
+									</layout:VerticalLayout>
+									<core:Fragment fragmentName="SS.SigniwisSports.view.bill" type="XML"></core:Fragment>
+									<!--<Label class="padding"></Label>-->
+									<!--<Button press="setData" text="TotalAmount" width="10rem" class="inputPadding"></Button>-->
+									<!--<Input id="totalAmount" editable="false" width="10rem" visible="false" placeholder="Total Amount"></Input>-->
+									<FlexBox alignItems="Start" justifyContent="End">
+										<items>
+											<Label id="totalAmount" class="amountSize" visible="false" design="Bold"></Label>
+										</items>
+									</FlexBox>
+									<FlexBox alignItems="Start" justifyContent="Center">
+										<items>
+											<Button text="{i18n>Submit}" type="Emphasized" press="raiseTicket" width="10rem"></Button>
+										</items>
+									</FlexBox>
+								</content>
+							</IconTabFilter >
+							<IconTabFilter icon="sap-icon://pushpin-on" text="Ticketing">
+								<content>
+									<tab:Table id="ticketingTable" rows="{ticketing>/raiseTicket}" selectionBehavior="RowOnly" visible="false" enableSelectAll="false">
+										<tab:columns>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>ProductId}"></Label>
+												</tab:label>
+												<tab:template>
+													<Text text="{ticketing>pId}"></Text>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>ProductName}"></Label>
+												</tab:label>
+												<tab:template>
+													<Text text="{ticketing>pName}"></Text>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>quantity}"></Label>
+												</tab:label>
+												<tab:template>
+													<Text text="{ticketing>pQuantity}"></Text>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>ProductStatus}"></Label>
+												</tab:label>
+												<tab:template>
+													<Text text="{ticketing>pStatus}"></Text>
+												</tab:template>
+											</tab:Column>
+											<tab:Column>
+												<tab:label>
+													<Label text="{i18n>TicketStatus}"></Label>
+												</tab:label>
+												<tab:template>
+													<Text text="{ticketing>status}" id="status"></Text>
+												</tab:template>
+											</tab:Column>
+										</tab:columns>
+									</tab:Table>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

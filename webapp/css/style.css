@@ -1,0 +1,36 @@
+/* Enter your custom styles here */
+/*.classFirst{*/
+/*	height:100px !important*/
+/*}*/
+
+.myBackgroundImage{
+	  background-image: url('https://ak.picdn.net/shutterstock/videos/712855/thumb/1.jpg');
+	  background-repeat:no-repeat;
+	  background-size:cover;
+}
+.amountSize{
+	font-size: 20px;
+}
+
+/*.padding{*/
+/*	padding-right:60rem;*/
+/*}*/
+/*.inputPadding{*/
+	/*width:10rem;*/
+/*	padding-right:30px;*/
+/*}*/
+/*@media screen and (max-width: 1120px) {*/
+/* .padding{*/
+/*	padding-right:60%;*/
+/*}*/
+/*}*/
+/*@media screen and (max-width: 850px) {*/
+/* .padding{*/
+/*	padding-right:50%;*/
+/*}*/
+/*}*/
+/*@media screen and (max-width: 670px) {*/
+/* .padding{*/
+/*	padding-right:30%;*/
+/*}*/
+/*}*/
